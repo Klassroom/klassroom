@@ -6,6 +6,8 @@ var session = require('express-session');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var config = require('./config/config.js');
+var passport = require('passport');
+var flash = require('connect-flash');
 
 app.use('/scripts', express.static(__dirname + '/dist/scripts'));
 app.use('/stylesheets', express.static(__dirname + '/dist/stylesheets'));
@@ -25,10 +27,15 @@ app.use(session({
   resave: true
 }));
 
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
+
 app.set('views', __dirname + '/client/views/');
 app.set('view engine', 'jade');
 
-require('./config/routes.js')(app);
+require('./config/routes.js')(app, passport);
+require('./config/passport.js')(passport);
 
 app.listen(config.port, function() {
   console.log(config.port);

@@ -1,28 +1,19 @@
 var User = require('./models/user');
 
-module.exports = function(app) {
+module.exports = function(app, passport) {
   app.get('/', function (req, res) {
     res.render('index');
   });
 
   app.get('/signup', function (req, res) {
     res.render('signup', {
-      message: 'Victory'
+      message: req.flash('signupMessage')
     });
   });
 
-  app.post('/signup', function (req, res) {
-    var newUser = new User();
-
-    newUser.local.username = req.body.email;
-    newUser.local.password = req.body.password;
-
-    newUser.save(function (error) {
-      if(error) {
-        throw error;
-      }
-    });
-
-    res.redirect('/');
-  });
+  app.post('/signup', passport.authenticate('local-signup', {
+    successRedirect: '/',
+    failureRedirect: '/signup',
+    failureFlash: true
+  }));
 }
