@@ -1,4 +1,6 @@
-var User = require('./models/user');
+'use strict';
+
+// var User = require('./models/user');
 
 module.exports = function(app, passport) {
   app.get('/', function (req, res) {
@@ -16,4 +18,4 @@ module.exports = function(app, passport) {
     failureRedirect: '/signup',
     failureFlash: true
   }));
-}
+};

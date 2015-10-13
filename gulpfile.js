@@ -5,6 +5,8 @@ var concat = require('gulp-concat');
 var notify = require('gulp-notify');
 var plumber = require('gulp-plumber');
 var ngAnnotate = require('gulp-ng-annotate');
+var jshint = require('gulp-jshint');
+var jshintStylish = require('jshint-stylish');
 
 var target = {
   stylesheets_src: './client/stylesheets/**/*.scss',
@@ -30,6 +32,13 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest(target.scripts_dist))
     .pipe(notify('Scripts done!'))
     .pipe(browserSync.reload({stream: true}));
+});
+
+gulp.task('lint', function() {
+  return(gulp.src(['.client/scripts/**/*.js', './server.js', './config/**/*.js']))
+    .pipe(plumber())
+    .pipe(jshint('.jshintrc'))
+    .pipe(jshint.reporter(jshintStylish));
 });
 
 gulp.task('browserSync', function() {

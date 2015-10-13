@@ -1,3 +1,5 @@
+'use strict';
+
 var localStrategy = require('passport-local').Strategy;
 var User = require('../config/models/user');
 
@@ -26,7 +28,7 @@ module.exports = function (passport) {
           }
 
           if(user) {
-            return done(null, false, req.flash('signupMessage', 'That email arealdy taken.'))
+            return done(null, false, req.flash('signupMessage', 'That email arealdy taken.'));
           } else {
             var newUser = new User();
 
@@ -41,8 +43,8 @@ module.exports = function (passport) {
               return done(null, newUser);
             });
           }
-        })
+        });
       });
     }
-  ))
-}
+  ));
+};
