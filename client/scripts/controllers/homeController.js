@@ -1,7 +1,8 @@
 (function() {
   'use strict';
 
-  angular.module('klassroom')
+  angular
+    .module('klassroom')
     .controller('homeController', homeController);
 
   function homeController() {

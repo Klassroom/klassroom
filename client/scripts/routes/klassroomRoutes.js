@@ -1,7 +1,8 @@
 (function() {
   'use strict';
 
-  angular.module('klassroom')
+  angular
+    .module('klassroom')
     .config(function($routeProvider, $locationProvider) {
       $routeProvider
       .when('/home', {

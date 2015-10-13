@@ -1,9 +1,4 @@
-// var mongoOptions = { db: { safe: true } };
-
-// exports.db = mongoose.connect(config.db, mongoOptions, function (err, res) {
-//   if (err) {
-//     console.log ('ERROR connecting to: ' + config.db + '. ' + err);
-//   } else {
-//     console.log ('Successfully connected to: ' + config.db);
-//   }
-// });
+module.exports = {
+  port: process.env.PORT || 7921,
+    db: 'mongodb://localhost:27017/klassroom'
+}

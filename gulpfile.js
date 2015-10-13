@@ -34,7 +34,7 @@ gulp.task('scripts', function() {
 
 gulp.task('browserSync', function() {
   browserSync({
-    proxy: 'localhost:3000',
+    proxy: 'localhost:7921',
     options: {
       reloadDelay: 250
     },
