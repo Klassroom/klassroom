@@ -1,0 +1,31 @@
+{
+  "name": "klassroom",
+  "version": "0.0.1",
+  "homepage": "https://github.com/Klassroom/klassroom",
+  "authors": [
+    "Bu Kinoshita <bukinoshita@gmail.com>"
+  ],
+  "description": "OpenSource Crowdfounding School",
+  "main": "",
+  "moduleType": [],
+  "keywords": [
+    "klassroom",
+    "open",
+    "source",
+    "crowdfounding",
+    "learning",
+    "school"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.7",
+    "angular-route": "~1.4.7"
+  }
+}

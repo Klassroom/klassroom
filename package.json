@@ -1,0 +1,33 @@
+{
+  "name": "klassroom",
+  "version": "0.0.1",
+  "description": "OpenSource Crowdfounding School",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.13.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "npm test",
+    "prestart": "sudo npm install && sudo npm install -g bower && bower install",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Klassroom/klassroom.git"
+  },
+  "keywords": [
+    "klassroom",
+    "open",
+    "source",
+    "crowdfounding",
+    "learning",
+    "school"
+  ],
+  "author": "Bu Kinoshita",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Klassroom/klassroom/issues"
+  },
+  "homepage": "https://github.com/Klassroom/klassroom#readme"
+}
