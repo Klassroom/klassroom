@@ -1,11 +1,19 @@
-<!DOCTYPE html>
-html(lang="en")
-head
-  meta(charset="UTF-8")
-  title Document
+doctype html
+html(lang="en" ng-app="klassroom")
 
-  link(rel="stylesheet" href="stylesheets/main.css")
+  head
+    meta(charset="UTF-8")
+    title Document
+    base(href="/")
 
-body
-  h1 Hello
-  
+    link(rel="stylesheet" href="stylesheets/main.css")
+
+  body
+    div(ng-view)
+
+    script(src="bower/angular/angular.js")
+    script(src="bower/angular-route/angular-route.js")
+    script(src="scripts/klassroom.js")
+    script(src="scripts/routes/klassroomRoutes.js")
+    script(src="scripts/controllers/homeController.js")
+    

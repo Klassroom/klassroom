@@ -13,7 +13,9 @@
     "gulp-sass": "^2.0.4",
     "jade": "^1.11.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp-ng-annotate": "^1.1.0"
+  },
   "scripts": {
     "test": "npm test",
     "prestart": "sudo npm install && sudo npm install -g bower && bower install",
