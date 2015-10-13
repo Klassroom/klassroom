@@ -7,16 +7,16 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var config = require('./config/config.js');
 
-// app.use('/scripts', express.static(__dirname + '/dist/scripts'));
-// app.use('/stylesheets', express.static(__dirname + '/dist/stylesheets'));
-// app.use('/images', express.static(__dirname + '/dist/images'));
-// app.use('/bower', express.static(__dirname + '/bower_components'));
+app.use('/scripts', express.static(__dirname + '/dist/scripts'));
+app.use('/stylesheets', express.static(__dirname + '/dist/stylesheets'));
+app.use('/images', express.static(__dirname + '/dist/images'));
+app.use('/bower', express.static(__dirname + '/bower_components'));
 
 mongoose.connect(config.db);
 app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({
-  extended: true
+  extended: false
 }));
 
 app.use(session({

@@ -1,0 +1,28 @@
+doctype html
+html(lang="en" ng-app="klassroom")
+  head
+    meta(charset="UTF-8")
+    title Document
+
+    link(rel="stylesheet" href="stylesheets/main.css")
+
+  body
+    form(action="/signup" method="post")
+      fieldset.form-group
+        label Email
+        input(
+          class="form-control"
+          type="email"
+          name="email"
+        )
+
+      fieldset.form-group
+        label Password
+        input(
+          class="form-control"
+          type="password"
+          name="password"
+        )
+
+      button.btn.btn-primary
+        | Sign up
