@@ -21,9 +21,7 @@ gulp.task('stylesheets', function() {
 
 gulp.task('browserSync', function() {
   browserSync({
-    server: {
-      baseDir: 'dist/'
-    },
+    proxy: 'localhost:3000',
     options: {
       reloadDelay: 250
     },
