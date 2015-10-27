@@ -18,5 +18,7 @@
         .otherwise({
           redirectTo: '/login'
         });
+
+      $locationProvider.html5Mode(true);
     });
 })();
