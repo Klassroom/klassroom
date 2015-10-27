@@ -19,6 +19,6 @@
           redirectTo: '/login'
         });
 
-      $locationProvider.html5Mode(true);
+      // $locationProvider.html5Mode(true);
     });
 })();

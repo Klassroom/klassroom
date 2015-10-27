@@ -77,12 +77,19 @@ fieldset[disabled] a.btn {
   @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
 }
 
-.btn-twitter {
-  @include button-variant($btn-twitter-color, $btn-twitter-bg, $btn-twitter-border);
+.btn-facebook {
+  @include button-variant($btn-facebook-color, $btn-facebook-bg, $btn-facebook-border);
+  padding-top: 14px;
+  padding-bottom: 14px;
+  max-width: 400px;
+  width: 100%;
+  position: relative;
 
   svg {
     vertical-align: middle;
-    margin-right: 10px;
+    position: absolute;
+    left: 25px;
+    top: 16px;
   }
 }
 

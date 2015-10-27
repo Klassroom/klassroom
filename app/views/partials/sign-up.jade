@@ -1,1 +1,42 @@
-h1 Sign Up
+main(class='register' role='main')
+  .col-md-8
+    section.register-section
+      h3.register-section__page Register
+      h1.register-section__title Become a member
+      h2.register-section__subtitle Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+      //- button.btn.btn-facebook
+      //-   svg(width="10px" viewBox="0 0 15 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns")
+      //-     defs
+      //-     g(id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage")
+      //-       g(id="register" sketch:type="MSArtboardGroup" transform="translate(-121.000000, -345.000000)" fill="#FFFFFF")
+      //-         g(id="content" sketch:type="MSLayerGroup" transform="translate(100.000000, 75.000000)")
+      //-           g(id="form" transform="translate(0.000000, 247.000000)" sketch:type="MSShapeGroup")
+      //-             g(id="facebook-button")
+      //-               g(id="facebook-logo" transform="translate(21.000000, 23.000000)")
+      //-                 path(d="M14.64375,9.836875 L9.865625,9.836875 L9.865625,6.703125 C9.865625,5.52625 10.645625,5.251875 11.195,5.251875 L14.566875,5.251875 L14.566875,0.078125 L9.923125,0.06 C4.768125,0.06 3.595,3.91875 3.595,6.388125 L3.595,9.836875 L0.61375,9.836875 L0.61375,15.168125 L3.595,15.168125 L3.595,30.25375 L9.865625,30.25375 L9.865625,15.168125 L14.096875,15.168125 L14.64375,9.836875 L14.64375,9.836875 Z" id="Shape")
+
+      //-   | Sign up using Facebook
+
+      //- hr.division
+
+      form(class='register-form')
+        fieldset.form-group
+          input(class='form-control' type='text' placeholder='Name')
+
+        fieldset.form-group
+          input(class='form-control' type='email' placeholder='Email')
+
+        fieldset.form-group
+          input(class='form-control' type='password' placeholder='Password')
+
+        button(class='btn btn-secondary')
+          | Sign up
+
+      p(class='register-section__text')
+        | If you already have an account, you can 
+        a(href='/login') login here
+        | .
+
+
+  .col-md-4.register-image
