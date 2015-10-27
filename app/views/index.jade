@@ -1,19 +1,16 @@
 doctype html
-html(lang="en" ng-app="klassroom")
+html(lang='en' ng-app='klassroom')
   head
-    meta(charset="UTF-8")
-    title Document
+    meta(charset='UTF-8')
+    title Klassroom
 
-    link(rel="stylesheet" href="stylesheets/main.css")
+    base(href='/')
+
+    link(rel='stylesheet' href='stylesheets/main.css')
 
   body
-    h1 home
+    ng-view
 
-    a(href="/signup") Sign up
-
-    script(src="bower/angular/angular.js")
-    script(src="bower/angular-route/angular-route.js")
-    script(src="scripts/klassroom.js")
-    script(src="scripts/controllers/homeController.js")
-    //- script(src="scripts/routes/klassroomRoutes.js")
-    
+    script(src='./bower_components/angular/angular.js')
+    script(src='./bower_components/angular-route/angular-route.js')
+    script(src='./scripts/main.js')
