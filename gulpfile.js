@@ -8,6 +8,7 @@ var ngAnnotate = require('gulp-ng-annotate');
 var jshint = require('gulp-jshint');
 var jshintStylish = require('jshint-stylish');
 var jade = require('gulp-jade');
+var clean = require('gulp-clean');
 
 var target = {
   views_src: './app/views/**/*.jade',
@@ -66,7 +67,12 @@ gulp.task('browserSync', function() {
   });
 });
 
-gulp.task('default', ['views', 'stylesheets', 'scripts', 'browserSync'], function() {
+gulp.task('clean', function() {
+  return gulp.src('./dist', {read: false})
+    .pipe(clean())
+});
+
+gulp.task('default', ['clean', 'views', 'stylesheets', 'scripts', 'browserSync'], function() {
   gulp.watch(target.views_src, ['views']);
   gulp.watch(target.stylesheets_src, ['stylesheets']);
   gulp.watch(target.scripts_src, ['scripts']);
