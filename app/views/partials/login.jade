@@ -1,0 +1,19 @@
+main(class='login' role='main')
+  form(class='login-form')
+    h1(class='login-form__title')
+      | {K}lassroom
+      span Beta
+
+    fieldset(class='form-group')
+      input(class='form-control' type='email' placeholder='Email')
+
+    fieldset(class='form-group')
+      input(class='form-control' type='password' placeholder='Password')
+
+    button(class='btn btn-secondary btn-block' type='submit')
+      | Sign in
+
+    p.login-form__text
+      | If you don’t have an account, 
+      a(href='')
+        | register here

@@ -17,7 +17,13 @@ var target = {
   stylesheets_src: './app/stylesheets/**/*.scss',
   stylesheets_dist: './dist/stylesheets/',
 
-  scripts_src: './app/scripts/**/*.js',
+  scripts_src: [
+    './app/scripts/klassroom.js',
+    './app/scripts/routes/*.js',
+    './app/scripts/controllers/*.js',
+    './app/scripts/directives/*.js',
+    './app/scripts/services/*.js'
+  ],
   scripts_dist: './dist/scripts/'
 };
 
@@ -42,6 +48,7 @@ gulp.task('stylesheets', function() {
 gulp.task('scripts', function() {
   return gulp.src(target.scripts_src)
     .pipe(plumber())
+    .pipe(concat('main.js'))
     .pipe(ngAnnotate())
     .pipe(gulp.dest(target.scripts_dist))
     .pipe(notify('Scripts done!'))
@@ -67,12 +74,12 @@ gulp.task('browserSync', function() {
   });
 });
 
-gulp.task('clean', function() {
-  return gulp.src('./dist', {read: false})
-    .pipe(clean())
-});
+// gulp.task('clean', function() {
+//   return gulp.src('./dist', {read: false})
+//     .pipe(clean({force: true}))
+// });
 
-gulp.task('default', ['clean', 'views', 'stylesheets', 'scripts', 'browserSync'], function() {
+gulp.task('default', ['views', 'stylesheets', 'scripts', 'browserSync'], function() {
   gulp.watch(target.views_src, ['views']);
   gulp.watch(target.stylesheets_src, ['stylesheets']);
   gulp.watch(target.scripts_src, ['scripts']);
