@@ -9,6 +9,8 @@ var jshint = require('gulp-jshint');
 var jshintStylish = require('jshint-stylish');
 var jade = require('gulp-jade');
 var clean = require('gulp-clean');
+var imagemin = require('gulp-imagemin');
+var pngquant = require('imagemin-pngquant');
 
 var target = {
   views_src: './app/views/**/*.jade',
@@ -24,7 +26,10 @@ var target = {
     './app/scripts/directives/*.js',
     './app/scripts/services/*.js'
   ],
-  scripts_dist: './dist/scripts/'
+  scripts_dist: './dist/scripts/',
+
+  image_src: './app/assets/images/*',
+  image_dist: './dist/images/'
 };
 
 gulp.task('views', function() {
@@ -72,6 +77,16 @@ gulp.task('browserSync', function() {
     },
     notify: false
   });
+});
+
+gulp.task('images', function () {
+  return gulp.src(target.image_src)
+    .pipe(imagemin({
+      progressive: true,
+      svgoPlugins: [{removeViewBox: false}],
+      use: [pngquant()]
+    }))
+    .pipe(gulp.dest(target.image_dist));
 });
 
 // gulp.task('clean', function() {
