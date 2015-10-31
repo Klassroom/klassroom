@@ -23,6 +23,13 @@ li {
 .leftnav-header__icon {
   float: right;
   margin-top: 23px;
+  cursor: pointer;
+  opacity: .75;
+  transition: .15s ease-in-out;
+
+  &:hover {
+    opacity: 1;
+  }
 }
 
 .logo {
@@ -43,10 +50,17 @@ li {
 .leftnav {
   display: block;
   width: 250px;
+  position: absolute;
   min-height: 100vh;
   height: 100%;
   float: left;
   background-color: $color-primary;
+  transform: translateX(0);
+  transition: .15s ease-in-out;
+
+  &.is-hidden {
+    transform: translateX(-250px);
+  }
 }
 
 .leftnav-header {
@@ -95,6 +109,13 @@ svg {
   width: calc(100% - 250px);
   height: 100vh;
   display: block;
+  transform: translateX(250px);
+  transition: .25s ease-in-out;
+
+  &.full-width {
+    width: 100%;
+    transform: translateX(0);
+  }
 }
 
 .navigation {

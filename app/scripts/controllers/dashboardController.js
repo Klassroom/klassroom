@@ -46,10 +46,10 @@
         title: 'Forces and Newtons laws of motion',
         subject: 'Physics'
       }
-    ]
+    ];
 
     var vm = this;
 
     vm.myCoursesList = myCoursesList;
-  };
+  }
 })();
