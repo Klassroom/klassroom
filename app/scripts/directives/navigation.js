@@ -9,6 +9,6 @@
     return {
       restrict: 'E',
       templateUrl: 'shared/navigation.html'
-    }
-  };
+    };
+  }
 })();

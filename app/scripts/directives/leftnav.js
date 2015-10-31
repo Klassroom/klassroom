@@ -8,7 +8,9 @@
   function leftnav () {
     return {
       restrict: 'E',
+      controller: 'leftnavController',
+      controllerAs: 'leftnavCtrl',
       templateUrl: 'shared/leftnav.html'
-    }
-  };
+    };
+  }
 })();
