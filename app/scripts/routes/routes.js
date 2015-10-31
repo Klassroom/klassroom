@@ -21,6 +21,12 @@
           controllerAs: 'dashboardCtrl'
         })
 
+        .when('/courses', {
+          templateUrl: 'partials/courses.html',
+          controller: 'coursesController',
+          controllerAs: 'coursesCtrl'
+        })
+
         .otherwise({
           redirectTo: '/login'
         });
