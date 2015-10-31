@@ -17,7 +17,8 @@
 
         .when('/dashboard', {
           templateUrl: 'partials/dashboard.html',
-          controller: 'dashboardController'
+          controller: 'dashboardController',
+          controllerAs: 'dashboardCtrl'
         })
 
         .otherwise({
