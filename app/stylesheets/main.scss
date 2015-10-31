@@ -80,6 +80,10 @@ svg {
   vertical-align: middle;
 }
 
+.main {
+  padding: 30px 25px;
+}
+
 .content {
   float: left;
   width: calc(100% - 250px);
@@ -105,6 +109,41 @@ svg {
 .dropdown__name {
   margin-left: 15px;
   margin-right: 15px;
+}
+
+.mycourse {
+  width: 100%;
+  background-color: $white;
+  box-shadow: 0 1px 2px rgba($black, .1);
+  border-radius: 3px;
+}
+
+.mycourse-header {
+  text-align: center;
+  border-bottom: 1px solid #EAEBED;
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.mycourse-content {
+  padding: 10px 15px;
+}
+
+.mycourse-content__subject {
+  color: $white;
+  background-color: $color-secondary;
+  border-radius: 2px;
+  padding: 2px 5px;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+.mycourse-content__title {
+  font-size: 18px;
+  color: $color-primary;
 }
 
 @import 'pages/login/page-login';
