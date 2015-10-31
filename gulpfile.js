@@ -54,14 +54,14 @@ gulp.task('scripts', function() {
   return gulp.src(target.scripts_src)
     .pipe(plumber())
     .pipe(concat('main.js'))
-    .pipe(ngAnnotate())
+    // .pipe(ngAnnotate())
     .pipe(gulp.dest(target.scripts_dist))
     .pipe(notify('Scripts done!'))
     .pipe(browserSync.reload({stream: true}));
 });
 
 gulp.task('lint', function() {
-  return(gulp.src(['.client/scripts/**/*.js', './server.js', './config/**/*.js']))
+  return(gulp.src(['./app/scripts/**/*.js', './server.js', './config/**/*.js']))
     .pipe(plumber())
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter(jshintStylish));
