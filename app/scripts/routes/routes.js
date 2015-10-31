@@ -15,6 +15,12 @@
           controller: 'signupController'
         })
 
+        .when('/dashboard', {
+          templateUrl: 'partials/dashboard.html',
+          controller: 'dashboardController',
+          controllerAs: 'dashboardCtrl'
+        })
+
         .otherwise({
           redirectTo: '/login'
         });
