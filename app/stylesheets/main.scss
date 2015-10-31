@@ -20,11 +20,17 @@ li {
   padding: 0;
 }
 
+.leftnav-header__icon {
+  float: right;
+  margin-top: 23px;
+}
+
 .logo {
   font-weight: 100;
   font-family: 'Helvetica Neue', 'Open Sans', Arial, sans-serif;
   color: $white;
   font-size: 24px;
+  display: inline-block;
 
   span {
     font-size: 14px;
