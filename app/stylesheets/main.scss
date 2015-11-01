@@ -102,6 +102,8 @@ svg {
 
 .main {
   padding: 30px 25px;
+  max-height: calc(100vh - 75px);
+  overflow-y: auto;
 }
 
 .content {
@@ -126,6 +128,8 @@ svg {
   display: block;
   padding-left: 25px;
   padding-right: 25px;
+  position: relative;
+  z-index: 1000;
 }
 
 .dropdown {
