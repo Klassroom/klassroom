@@ -21,7 +21,9 @@ leftnav(class='leftnav' ng-class='leftnavCtrl.leftnavToggle')
 
             .course-content-info
               .course-content-info__progress
-
+                span.course-content-info__track
+                  | {{ courseFeatured.funded }}%
+                  
               .course-content-box
                 h3 {{ courseFeatured.funded }}%
                 h4 Funded
@@ -50,6 +52,8 @@ leftnav(class='leftnav' ng-class='leftnavCtrl.leftnavToggle')
 
             .course-content-info
               .course-content-info__progress
+                span.course-content-info__track
+                  | {{ course.funded }}%
 
               .course-content-box
                 h3 {{ course.funded }}%
