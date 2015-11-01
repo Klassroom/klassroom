@@ -5,147 +5,60 @@ leftnav(class='leftnav' ng-class='leftnavCtrl.leftnavToggle')
 
   main(class='main' role='main')
     .row
-      .col-md-6
+      .col-md-6(ng-repeat='courseFeatured in coursesCtrl.featuredCoursesList')
         article.course.is-featured
           aside.course-image
 
           section.course-content
             h2.course-content__title
-              | Architectural Design
+              | {{ courseFeatured.title }}
 
             label.course-content__subtitle
-              | Louis Gray | 80 HOURS
+              | {{ courseFeatured.author }} | {{ courseFeatured.time }} HOURS
 
             p.course-content__description
-              | Provides a foundation to the design of the built environment, from the scale of the object, to the building, to the larger territory. Focuses on the shared foundations of the allied design disciplines of architecture ...
+              | {{ courseFeatured.description }}
 
             .course-content-info
               .course-content-info__progress
 
               .course-content-box
-                h3 19%
+                h3 {{ courseFeatured.funded }}%
                 h4 Funded
 
               .course-content-box
-                h3 $2.974
+                h3 {{ courseFeatured.pledged | currency }}
                 h4 Pledged
 
               .course-content-box
-                h3 24
+                h3 {{ courseFeatured.days }}
                 h4 Days to go
 
-      .col-md-6
-        article.course.is-featured
-          aside.course-image
-
-          section.course-content
-            h2.course-content__title
-              | Architectural Design
-
-            label.course-content__subtitle
-              | Louis Gray | 80 HOURS
-
-            p.course-content__description
-              | Provides a foundation to the design of the built environment, from the scale of the object, to the building, to the larger territory. Focuses on the shared foundations of the allied design disciplines of architecture ...
-
-            .course-content-info
-              .course-content-info__progress
-
-              .course-content-box
-                h3 19%
-                h4 Funded
-
-              .course-content-box
-                h3 $2.974
-                h4 Pledged
-
-              .course-content-box
-                h3 24
-                h4 Days to go
-
-      .col-md-4
+      .col-md-4(ng-repeat='course in coursesCtrl.coursesList')
         article.course
           header.course-image
 
           section.course-content
             h2.course-content__title
-              | Architectural Design
+              | {{ course.title }}
 
             label.course-content__subtitle
-              | Louis Gray | 80 HOURS
+              | {{ course.author }} | {{ course.time }} HOURS
 
             p.course-content__description
-              | Provides a foundation to the design of the built environment, from the scale of the object, to the building, to the larger territory. Focuses on the shared foundations of the allied design disciplines of architecture ...
+              | {{ course.description }}
 
             .course-content-info
               .course-content-info__progress
 
               .course-content-box
-                h3 19%
+                h3 {{ course.funded }}%
                 h4 Funded
 
               .course-content-box
-                h3 $2.974
+                h3 {{ course.pledged | currency }}
                 h4 Pledged
 
               .course-content-box
-                h3 24
-                h4 Days to go
-
-      .col-md-4
-        article.course
-          header.course-image
-
-          section.course-content
-            h2.course-content__title
-              | Architectural Design
-
-            label.course-content__subtitle
-              | Louis Gray | 80 HOURS
-
-            p.course-content__description
-              | Provides a foundation to the design of the built environment, from the scale of the object, to the building, to the larger territory. Focuses on the shared foundations of the allied design disciplines of architecture ...
-
-            .course-content-info
-              .course-content-info__progress
-
-              .course-content-box
-                h3 19%
-                h4 Funded
-
-              .course-content-box
-                h3 $2.974
-                h4 Pledged
-
-              .course-content-box
-                h3 24
-                h4 Days to go
-
-      .col-md-4
-        article.course
-          header.course-image
-
-          section.course-content
-            h2.course-content__title
-              | Architectural Design
-
-            label.course-content__subtitle
-              | Louis Gray | 80 HOURS
-
-            p.course-content__description
-              | Provides a foundation to the design of the built environment, from the scale of the object, to the building, to the larger territory. Focuses on the shared foundations of the allied design disciplines of architecture ...
-
-            .course-content-info
-              .course-content-info__progress
-
-              .course-content-box
-                h3 19%
-                h4 Funded
-
-              .course-content-box
-                h3 $2.974
-                h4 Pledged
-
-              .course-content-box
-                h3 24
+                h3 {{ course.days }}
                 h4 Days to go
