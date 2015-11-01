@@ -222,10 +222,8 @@ svg {
   margin-bottom: 30px;
 
   &:hover {
-    .course-content-info__progress {
-      &:after {
-        display: block;
-      }
+    .course-content-info__track {
+      display: block;
     }
   }
 
@@ -318,23 +316,22 @@ svg {
     background-color: #57D079;
     border-radius: 5px;
   }
+}
 
-  &:after {
-    content: '75%';
-    width: 30px;
-    font-size: 10px;
-    font-weight: 600;
-    background-color: $color-primary;
-    color: $white;
-    line-height: 20px;
-    border-radius: 2px;
-    text-align: center;
-    height: 20px;
-    position: absolute;
-    right: -10px;
-    top: -25px;
-    display: none;
-  }
+.course-content-info__track {
+  width: 30px;
+  font-size: 10px;
+  font-weight: 600;
+  background-color: $color-primary;
+  color: $white;
+  line-height: 20px;
+  border-radius: 2px;
+  text-align: center;
+  height: 20px;
+  position: absolute;
+  right: -10px;
+  top: -25px;
+  display: none;
 }
 
 .course-content-box {
