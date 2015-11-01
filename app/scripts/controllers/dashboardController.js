@@ -5,51 +5,9 @@
     .module('klassroom')
     .controller('dashboardController', dashboardController);
 
-  function dashboardController () {
-    var myCoursesList = [
-      {
-        title: 'Forces and Newtons laws of motion',
-        subject: 'Physics'
-      },
-
-      {
-        title: 'Forces and Newtons laws of motion',
-        subject: 'Physics'
-      },
-
-      {
-        title: 'Forces and Newtons laws of motion',
-        subject: 'Physics'
-      },
-
-      {
-        title: 'Forces and Newtons laws of motion',
-        subject: 'Physics'
-      },
-
-      {
-        title: 'Forces and Newtons laws of motion',
-        subject: 'Physics'
-      },
-
-      {
-        title: 'Forces and Newtons laws of motion',
-        subject: 'Physics'
-      },
-
-      {
-        title: 'Forces and Newtons laws of motion',
-        subject: 'Physics'
-      },
-
-      {
-        title: 'Forces and Newtons laws of motion',
-        subject: 'Physics'
-      }
-    ];
-
+  function dashboardController (MyCoursesList) {
     var vm = this;
 
-    vm.myCoursesList = myCoursesList;
+    vm.myCoursesList = MyCoursesList.myCoursesList;
   }
 })();
