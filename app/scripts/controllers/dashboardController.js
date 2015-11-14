@@ -16,33 +16,33 @@
 
     vm.tabs = [{
       title: 'My Courses',
-      url: 'myCourses.html'
+      url: 'includes/myCourses.html'
     }, {
       title: 'My Progress',
-      url: 'myProgress.html'
+      url: 'includes/myProgress.html'
     }, {
       title: 'Schedule',
-      url: 'mySchedule.html'
+      url: 'includes/mySchedule.html'
     }];
 
-    vm.currentTab = 'myCourses.html';
+    vm.currentTab = 'includes/myCourses.html';
 
     vm.onClickTab = function (tab) {
       console.log('Tab: ', tab);
 
-      if(tab.url === 'myCourses.html') {
+      if(tab.url === 'includes/myCourses.html') {
         vm.currentTab = tab.url;
 
         vm.isActiveTab = function (tabUrl) {
           return tabUrl === vm.currentTab;
         };
-      } else if(tab.url === 'myProgress.html') {
+      } else if(tab.url === 'includes/myProgress.html') {
         vm.currentTab = tab.url;
 
         vm.isActiveTab = function (tabUrl) {
           return tabUrl === vm.currentTab;
         };
-      } else if(tab.url === 'mySchedule.html') {
+      } else if(tab.url === 'includes/mySchedule.html') {
         vm.currentTab = tab.url;
 
         vm.isActiveTab = function (tabUrl) {
