@@ -20,6 +20,23 @@ li {
   padding: 0;
 }
 
+.tabs {
+  float: left;
+}
+
+.tabs-item {
+  display: inline-block;
+  line-height: 75px;
+  margin-right: 30px;
+  opacity: .75;
+  cursor: pointer;
+
+  &.is-active {
+    opacity: 1;
+    font-weight: 600;
+  }
+}
+
 .leftnav-header__icon {
   float: right;
   margin-top: 23px;
