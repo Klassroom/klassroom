@@ -4,7 +4,12 @@ leftnav(class='leftnav' ng-class='leftnavCtrl.leftnavToggle')
   navigation.navigation
 
   main(class='main' role='main')
-    .row
+    div(ng-include="dashboardCtrl.currentTab")
+
+
+
+script(type="text/ng-template" id="myCourses.html")
+  .row
       .col-md-3.col-sm-6(ng-repeat='mycourse in dashboardCtrl.myCoursesList')
         article(class='mycourse')
           header(class='mycourse-header')
@@ -25,3 +30,9 @@ leftnav(class='leftnav' ng-class='leftnavCtrl.leftnavToggle')
 
             h2.mycourse-content__title
               | {{ mycourse.title }}
+
+script(type="text/ng-template" id="myProgress.html")
+  h1 My Progress
+
+script(type="text/ng-template" id="mySchedule.html")
+  h1 Schedule

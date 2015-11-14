@@ -5,6 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "browser-sync": "^2.9.11",
+    "express": "^4.13.3",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
     "gulp-imagemin": "^2.3.0",
@@ -15,7 +16,8 @@
     "gulp-sass": "^2.0.4",
     "imagemin-pngquant": "^4.2.0",
     "jade": "^1.11.0",
-    "jshint-stylish": "^2.0.1"
+    "jshint-stylish": "^2.0.1",
+    "passport": "^0.3.2"
   },
   "devDependencies": {
     "gulp-clean": "^0.3.1",

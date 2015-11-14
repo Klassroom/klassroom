@@ -21,6 +21,12 @@
           controllerAs: 'dashboardCtrl'
         })
 
+        .when('/dashboard/:tab', {
+          templateUrl: 'partials/dashboard.html',
+          controller: 'dashboardController',
+          controllerAs: 'dashboardCtrl'
+        })
+
         .when('/courses', {
           templateUrl: 'partials/courses.html',
           controller: 'coursesController',

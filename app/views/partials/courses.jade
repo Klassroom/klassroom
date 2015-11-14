@@ -17,7 +17,7 @@ leftnav(class='leftnav' ng-class='leftnavCtrl.leftnavToggle')
               | {{ courseFeatured.author }} | {{ courseFeatured.time }} HOURS
 
             p.course-content__description
-              | {{ courseFeatured.description }}
+              | {{ courseFeatured.description | strLimit: 200 }}
 
             .course-content-info
               .course-content-info__progress
@@ -48,7 +48,7 @@ leftnav(class='leftnav' ng-class='leftnavCtrl.leftnavToggle')
               | {{ course.author }} | {{ course.time }} HOURS
 
             p.course-content__description
-              | {{ course.description }}
+              | {{ course.description | strLimit: 200 }}
 
             .course-content-info
               .course-content-info__progress

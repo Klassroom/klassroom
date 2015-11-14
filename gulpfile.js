@@ -23,6 +23,7 @@ var target = {
     './app/scripts/klassroom.js',
     './app/scripts/routes/*.js',
     './app/scripts/controllers/*.js',
+    './app/scripts/filters/*.js',
     './app/scripts/directives/*.js',
     './app/scripts/services/*.js'
   ],
