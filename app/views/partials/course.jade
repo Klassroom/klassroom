@@ -1,0 +1,39 @@
+leftnav(class='leftnav' ng-class='leftnavCtrl.leftnavToggle')
+
+.content(ng-class='leftnavCtrl.fullContent')
+  navigation.navigation
+
+  main(class='main' role='main')
+    section.course
+      .course-cover(style='background-image: url("./../../../images/{{courseCtrl.image}}")')
+        .course-cover-info
+          h1 {{ courseCtrl.name }}
+          p {{ courseCtrl.description | strLimit: 150 }}
+
+          .video
+
+        footer.course-footer
+          .course-footer-info
+            ul
+              li {{ courseCtrl.pledged | currency }}
+                span pledged of {{ courseCtrl.total | currency }} goal
+              
+              li 238
+                span backers
+
+              li 12
+                span days
+
+            button(class='btn btn-success')
+              | Back this project
+      //- h1 {{ courseCtrl.author }}
+      //- h1 {{ courseCtrl.subject }}
+      //- h1 {{ courseCtrl.duration }}
+      //- h1 {{ courseCtrl.description }}
+      //- h1 {{ courseCtrl.dateCreated }}
+      //- h1 {{ courseCtrl.dateEnd }}
+      //- h1 {{ courseCtrl.image }}
+      //- h1 {{ courseCtrl.featured }}
+      //- h1 {{ courseCtrl.icon }}
+      //- h1 
+      //- h1 {{ courseCtrl.pledged }}
