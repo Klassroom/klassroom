@@ -5,10 +5,17 @@
     .module('klassroom')
     .controller('coursesController', coursesController);
 
-  function coursesController (FeaturedCoursesList, CoursesList) {
+  function coursesController (CoursesListService) {
     var vm = this;
 
-    vm.featuredCoursesList = FeaturedCoursesList.featuredCoursesList;
-    vm.coursesList = CoursesList.coursesList;
+    CoursesListService.getCourse()
+      .then(
+        function successCallback (response) {
+          vm.coursesList = response.data;
+        },
+        function errorCallback (error) {
+          console.log('Course Error: ', error)
+        }
+      );
   }
 })();

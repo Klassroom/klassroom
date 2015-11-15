@@ -5,64 +5,34 @@ leftnav(class='leftnav' ng-class='leftnavCtrl.leftnavToggle')
 
   main(class='main' role='main')
     .row
-      .col-md-6(ng-repeat='courseFeatured in coursesCtrl.featuredCoursesList')
-        article.course.is-featured
+      div(ng-repeat='course in coursesCtrl.coursesList' ng-class='course.course.featured ? "col-md-6" : "col-md-4"')
+        article(class='course' ng-class='course.course.featured ? "is-featured" : ""')
           aside.course-image
 
           section.course-content
             h2.course-content__title
-              | {{ courseFeatured.title }}
+              | {{ course.course.name }}
 
             label.course-content__subtitle
-              | {{ courseFeatured.author }} | {{ courseFeatured.time }} HOURS
+              | {{ course.course.author }} | {{ course.course.duration }} HOURS
 
             p.course-content__description
-              | {{ courseFeatured.description | strLimit: 200 }}
+              | {{ course.course.description | strLimit: 160 }}
 
             .course-content-info
               .course-content-info__progress
+                span.course-content-info__tracker(style='width: {{ course.fund.pledged * 100 / course.fund.total | number: 0 }}%')
                 span.course-content-info__track
-                  | {{ courseFeatured.funded }}%
+                  | {{ course.fund.pledged * 100 / course.fund.total | number: 0 }}%
                   
               .course-content-box
-                h3 {{ courseFeatured.funded }}%
+                h3 {{ course.fund.pledged * 100 / course.fund.total | number: 0 }}%
                 h4 Funded
 
               .course-content-box
-                h3 {{ courseFeatured.pledged | currency }}
+                h3 {{ course.fund.pledged | currency }}
                 h4 Pledged
 
               .course-content-box
-                h3 {{ courseFeatured.days }}
-                h4 Days to go
-
-      .col-md-4(ng-repeat='course in coursesCtrl.coursesList')
-        article.course
-          header.course-image
-
-          section.course-content
-            h2.course-content__title
-              | {{ course.title }}
-
-            label.course-content__subtitle
-              | {{ course.author }} | {{ course.time }} HOURS
-
-            p.course-content__description
-              | {{ course.description | strLimit: 200 }}
-
-            .course-content-info
-              .course-content-info__progress
-                span.course-content-info__track
-                  | {{ course.funded }}%
-
-              .course-content-box
-                h3 {{ course.funded }}%
-                h4 Funded
-
-              .course-content-box
-                h3 {{ course.pledged | currency }}
-                h4 Pledged
-
-              .course-content-box
-                h3 {{ course.days }}
+                h3 30
                 h4 Days to go
