@@ -5,14 +5,19 @@
     .module('klassroom')
     .controller('dashboardController', dashboardController);
 
-  function dashboardController (MyCoursesList, $routeParams) {
+  function dashboardController (MyCoursesListService, $routeParams) {
     var vm = this;
 
-    vm.nice = function (tab) {
-      alert(tab);
-    }
-
-    vm.myCoursesList = MyCoursesList.myCoursesList;
+    MyCoursesListService.getMyCourses()
+      .then(
+        function successCallback (response) {
+          vm.myCoursesList = response.data;
+          console.log(response.data);
+        },
+        function errorCallback (error) {
+          console.log('Course Error: ', error);
+        }
+      );
 
     vm.tabs = [{
       title: 'My Courses',

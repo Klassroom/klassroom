@@ -1,4 +1,4 @@
-(function () {
+(function() {
   'use strict';
 
   angular
@@ -14,7 +14,7 @@
           vm.coursesList = response.data;
         },
         function errorCallback (error) {
-          console.log('Course Error: ', error)
+          console.log('Course Error: ', error);
         }
       );
   }
