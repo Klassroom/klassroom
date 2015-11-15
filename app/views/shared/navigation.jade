@@ -19,7 +19,7 @@ ul.tabs
   li(class='tabs-item' ng-repeat='tab in dashboardCtrl.tabs' ng-click='dashboardCtrl.onClickTab(tab)' ng-class="{'is-active': dashboardCtrl.isActiveTab(tab.url)}")
     | {{ tab.title }}
 
-ul.dropdown
+ul.dropdown(ng-click="dropdownMenuToggle = !dropdownMenuToggle")
   svg(width='35px' viewBox='0 0 35 35' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:sketch='http://www.bohemiancoding.com/sketch/ns')
     title Avatar
     defs
@@ -45,3 +45,10 @@ ul.dropdown
           g(id='dropdown-menu' transform='translate(978.000000, 20.000000)' sketch:type='MSShapeGroup')
             g(id='caret-down' transform='translate(178.000000, 16.000000)')
               path(d='M0.270890862,-9.26464035e-17 C0.184558624,-9.26464035e-17 0.159234501,0.0592814699 0.216789326,0.116836295 L4.64131651,5.63864622 C4.69887133,5.69620104 4.76362051,5.69620104 4.82117534,5.63864622 L9.24570252,0.116836295 C9.30325735,0.0592814699 9.278221,-4.4408921e-16 9.19160099,-4.4408921e-16 L0.270603088,-4.4408921e-16 L0.270890862,-9.26464035e-17 Z' id='Shape')
+  
+  ul.dropdown-menu(ng-show='dropdownMenuToggle')
+    li
+      a(href='#') Account
+
+    li
+      a(href='#') Logout
