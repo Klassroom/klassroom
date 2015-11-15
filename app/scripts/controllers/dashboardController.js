@@ -5,44 +5,49 @@
     .module('klassroom')
     .controller('dashboardController', dashboardController);
 
-  function dashboardController (MyCoursesList, $routeParams) {
+  function dashboardController (MyCoursesListService, $routeParams) {
     var vm = this;
 
-    vm.nice = function (tab) {
-      alert(tab);
-    }
-
-    vm.myCoursesList = MyCoursesList.myCoursesList;
+    MyCoursesListService.getMyCourses()
+      .then(
+        function successCallback (response) {
+          vm.myCoursesList = response.data;
+          console.log(response.data);
+        },
+        function errorCallback (error) {
+          console.log('Course Error: ', error);
+        }
+      );
 
     vm.tabs = [{
       title: 'My Courses',
-      url: 'myCourses.html'
+      url: 'includes/myCourses.html'
     }, {
       title: 'My Progress',
-      url: 'myProgress.html'
+      url: 'includes/myProgress.html'
     }, {
       title: 'Schedule',
-      url: 'mySchedule.html'
+      url: 'includes/mySchedule.html'
     }];
 
-    vm.currentTab = 'myCourses.html';
+    vm.currentTab = 'includes/myCourses.html';
 
     vm.onClickTab = function (tab) {
       console.log('Tab: ', tab);
 
-      if(tab.url === 'myCourses.html') {
+      if(tab.url === 'includes/myCourses.html') {
         vm.currentTab = tab.url;
 
         vm.isActiveTab = function (tabUrl) {
           return tabUrl === vm.currentTab;
         };
-      } else if(tab.url === 'myProgress.html') {
+      } else if(tab.url === 'includes/myProgress.html') {
         vm.currentTab = tab.url;
 
         vm.isActiveTab = function (tabUrl) {
           return tabUrl === vm.currentTab;
         };
-      } else if(tab.url === 'mySchedule.html') {
+      } else if(tab.url === 'includes/mySchedule.html') {
         vm.currentTab = tab.url;
 
         vm.isActiveTab = function (tabUrl) {
