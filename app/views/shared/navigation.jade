@@ -19,6 +19,15 @@ ul.tabs
   li(class='tabs-item' ng-repeat='tab in dashboardCtrl.tabs' ng-click='dashboardCtrl.onClickTab(tab)' ng-class="{'is-active': dashboardCtrl.isActiveTab(tab.url)}")
     | {{ tab.title }}
 
+//- a(class='btn btn-primary-outline btn-sm btn-back' href="#/courses")
+//-   svg(viewBox="0 0 26 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns")
+//-     defs
+//-     g(id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage")
+//-       g(class='arrow-back' id="arrow-back" sketch:type="MSLayerGroup" fill="#000000")
+//-         path(d="M24.498,0.586 C23.717,-0.195 22.451,-0.195 21.669,0.586 L0.763,21.492 C-0.018,22.273 -0.018,23.539 0.763,24.32 L21.669,45.226 C22.06,45.617 22.571,45.812 23.083,45.812 C23.595,45.812 24.107,45.617 24.498,45.226 C25.279,44.445 25.279,43.179 24.498,42.398 L5.005,22.906 L24.497,3.414 C25.278,2.633 25.278,1.367 24.498,0.586 L24.498,0.586 Z" id="Shape" sketch:type="MSShapeGroup")
+
+//-   | Courses
+
 ul.dropdown(ng-click="dropdownMenuToggle = !dropdownMenuToggle")
   svg(width='35px' viewBox='0 0 35 35' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:sketch='http://www.bohemiancoding.com/sketch/ns')
     title Avatar
