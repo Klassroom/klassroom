@@ -39,6 +39,18 @@
           controllerAs: 'courseCtrl'
         })
 
+        .when('/account', {
+          templateUrl: 'partials/account.html',
+          controller: 'accountController',
+          controllerAs: 'accountCtrl'
+        })
+
+        .when('/ask-course', {
+          templateUrl: 'partials/ask-course.html',
+          controller: 'askCourseController',
+          controllerAs: 'askCourseCtrl'
+        })
+
         .otherwise({
           redirectTo: '/login'
         });
