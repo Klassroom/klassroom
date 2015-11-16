@@ -13,34 +13,22 @@ var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 
 var target = {
-  views_src: './app/views/**/*.jade',
-  views_dist: './dist/',
-
-  stylesheets_src: './app/stylesheets/**/*.scss',
+  stylesheets_src: './public/stylesheets/**/*.scss',
   stylesheets_dist: './dist/stylesheets/',
 
   scripts_src: [
-    './app/scripts/klassroom.js',
-    './app/scripts/routes/*.js',
-    './app/scripts/controllers/*.js',
-    './app/scripts/filters/*.js',
-    './app/scripts/directives/*.js',
-    './app/scripts/services/*.js'
+    './public/scripts/klassroom.js',
+    './public/scripts/routes/*.js',
+    './public/scripts/controllers/*.js',
+    './public/scripts/filters/*.js',
+    './public/scripts/directives/*.js',
+    './public/scripts/services/*.js'
   ],
   scripts_dist: './dist/scripts/',
 
-  image_src: './app/assets/images/*',
+  image_src: './public/assets/images/*',
   image_dist: './dist/images/'
 };
-
-gulp.task('views', function() {
-  return gulp.src(target.views_src)
-    .pipe(plumber())
-    .pipe(jade())
-    .pipe(gulp.dest(target.views_dist))
-    .pipe(notify('Views done!'))
-    .pipe(browserSync.reload({stream: true}));
-});
 
 gulp.task('stylesheets', function() {
   return gulp.src(target.stylesheets_src)
@@ -62,7 +50,7 @@ gulp.task('scripts', function() {
 });
 
 gulp.task('lint', function() {
-  return(gulp.src(['./app/scripts/**/*.js', './server.js', './config/**/*.js']))
+  return(gulp.src(['./public/scripts/**/*.js', './server.js', './config/**/*.js']))
     .pipe(plumber())
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter(jshintStylish));
@@ -90,13 +78,7 @@ gulp.task('images', function () {
     .pipe(gulp.dest(target.image_dist));
 });
 
-// gulp.task('clean', function() {
-//   return gulp.src('./dist', {read: false})
-//     .pipe(clean({force: true}))
-// });
-
-gulp.task('default', ['views', 'stylesheets', 'scripts', 'browserSync'], function() {
-  gulp.watch(target.views_src, ['views']);
+gulp.task('default', ['stylesheets', 'scripts', 'browserSync'], function() {
   gulp.watch(target.stylesheets_src, ['stylesheets']);
   gulp.watch(target.scripts_src, ['scripts']);
 });

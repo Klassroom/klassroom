@@ -5,17 +5,17 @@ main(class='register' role='main')
       h1.register-section__title Become a member
       h2.register-section__subtitle Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
-      form(class='register-form')
+      form(class='register-form' name='form' ng-submit='signupCtrl.register(form)')
         fieldset.form-group
-          input(class='form-control' type='text' placeholder='Name')
+          input(class='form-control' type='text' placeholder='Name' ng-model='username' name='username')
 
         fieldset.form-group
-          input(class='form-control' type='email' placeholder='Email')
+          input(class='form-control' type='email' placeholder='Email' ng-model='email' name='email')
 
         fieldset.form-group
-          input(class='form-control' type='password' placeholder='Password')
+          input(class='form-control' type='password' placeholder='Password' ng-model='password' name='password')
 
-        button(class='btn btn-secondary')
+        button(class='btn btn-secondary' type='submit')
           | Sign up
 
       p(class='register-section__text')
