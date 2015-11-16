@@ -8,7 +8,7 @@
   function navigation () {
     return {
       restrict: 'E',
-      templateUrl: 'shared/navigation.html'
+      templateUrl: 'shared/navigation'
     };
   }
 })();
