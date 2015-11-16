@@ -21,7 +21,7 @@
           controllerAs: 'dashboardCtrl'
         })
 
-        .when('/dashboard/:tab', {
+        .when('/dashboard/myCourse/:id', {
           templateUrl: 'partials/dashboard.html',
           controller: 'dashboardController',
           controllerAs: 'dashboardCtrl'
@@ -31,6 +31,24 @@
           templateUrl: 'partials/courses.html',
           controller: 'coursesController',
           controllerAs: 'coursesCtrl'
+        })
+
+        .when('/courses/:id', {
+          templateUrl: 'partials/course.html',
+          controller: 'courseController',
+          controllerAs: 'courseCtrl'
+        })
+
+        .when('/account', {
+          templateUrl: 'partials/account.html',
+          controller: 'accountController',
+          controllerAs: 'accountCtrl'
+        })
+
+        .when('/ask-course', {
+          templateUrl: 'partials/ask-course.html',
+          controller: 'askCourseController',
+          controllerAs: 'askCourseCtrl'
         })
 
         .otherwise({

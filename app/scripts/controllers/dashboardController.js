@@ -12,7 +12,6 @@
       .then(
         function successCallback (response) {
           vm.myCoursesList = response.data;
-          console.log(response.data);
         },
         function errorCallback (error) {
           console.log('Course Error: ', error);

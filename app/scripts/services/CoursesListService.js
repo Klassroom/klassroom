@@ -7,7 +7,7 @@
 
   function CoursesListService ($http) {
     var request = {
-      url: 'https://gist.githubusercontent.com/BuKinoshita/8c031e6c1eba998e151c/raw/25390d2b91aee5aaf750c041f65cb0cefd191e39/courses.json',
+      url: 'https://gist.githubusercontent.com/BuKinoshita/8c031e6c1eba998e151c/raw/fdad091a7a92e2eee74eedf6eac915f9358e13f4/courses.json',
       method: 'GET'
     };
 
