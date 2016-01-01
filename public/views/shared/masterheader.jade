@@ -1,0 +1,26 @@
+header.masterheader
+  .container
+    a(href="#" class="masterheader-logo")
+      h1.masterheader-logo__title.logo {K}lassroom
+
+    nav.masterheader-navigation
+      ul
+        li
+          a(href="#")
+            | Dashboard
+
+        li
+          a(href="#")
+            | Discover
+
+        li
+          a(href="#")
+            | Klass
+
+    a(href="#" class="btn btn-success masterheader-btn" ng-show="{{ masterheaderCtrl.isTeacher }}")
+      | Create Course
+
+    nav.masterheader-user
+      img(ng-src="{{ masterheaderCtrl.photo }}", alt="")
+
+      span {{ masterheaderCtrl.username }}
