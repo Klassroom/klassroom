@@ -13,22 +13,34 @@ var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 
 var target = {
-  stylesheets_src: './public/stylesheets/**/*.scss',
+  views_src: './public/views/**/*.jade',
+  views_dist: './dist/',
+
+  stylesheets_src: './public/stylesheets/**/**/*.scss',
   stylesheets_dist: './dist/stylesheets/',
 
-  scripts_src: [
-    './public/scripts/klassroom.js',
-    './public/scripts/routes/*.js',
-    './public/scripts/controllers/*.js',
-    './public/scripts/filters/*.js',
-    './public/scripts/directives/*.js',
-    './public/scripts/services/*.js'
+  dashboard_scripts_src: [
+    './public/scripts/dashboard/dashboard.js',
+    './public/scripts/dashboard/routes/*.js',
+    './public/scripts/dashboard/controllers/*.js',
+    './public/scripts/dashboard/filters/*.js',
+    './public/scripts/dashboard/directives/*.js',
+    './public/scripts/dashboard/services/*.js'
   ],
   scripts_dist: './dist/scripts/',
 
   image_src: './public/assets/images/*',
   image_dist: './dist/images/'
 };
+
+gulp.task('views', function() {
+  return gulp.src(target.views_src)
+    .pipe(plumber())
+    .pipe(jade())
+    .pipe(gulp.dest(target.views_dist))
+    .pipe(notify('Views done!'))
+    .pipe(browserSync.reload({stream: true}));
+});
 
 gulp.task('stylesheets', function() {
   return gulp.src(target.stylesheets_src)
@@ -39,27 +51,22 @@ gulp.task('stylesheets', function() {
     .pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('scripts', function() {
-  return gulp.src(target.scripts_src)
+gulp.task('dashboard-script', function() {
+  return gulp.src(target.dashboard_scripts_src)
     .pipe(plumber())
-    .pipe(concat('main.js'))
-    // .pipe(ngAnnotate())
+    .pipe(concat('dashboard.js'))
     .pipe(gulp.dest(target.scripts_dist))
     .pipe(notify('Scripts done!'))
     .pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('lint', function() {
-  return(gulp.src(['./public/scripts/**/*.js', './server.js', './config/**/*.js']))
-    .pipe(plumber())
-    .pipe(jshint('.jshintrc'))
-    .pipe(jshint.reporter(jshintStylish));
-});
+gulp.task('scripts', ['dashboard-script']);
 
 gulp.task('browserSync', function() {
   browserSync({
     server: {
-      baseDir: './dist'
+      baseDir: './dist',
+      index: 'dashboard.html'
     },
     options: {
       reloadDelay: 250
@@ -78,7 +85,8 @@ gulp.task('images', function () {
     .pipe(gulp.dest(target.image_dist));
 });
 
-gulp.task('default', ['stylesheets', 'scripts', 'browserSync'], function() {
+gulp.task('default', ['views', 'stylesheets', 'scripts', 'browserSync'], function() {
+  gulp.watch(target.views_src, ['views']);
   gulp.watch(target.stylesheets_src, ['stylesheets']);
   gulp.watch(target.scripts_src, ['scripts']);
 });
